@@ -1,188 +1,277 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
   <defs>
     <style>
-      @keyframes flicker { 0%,100%{opacity:1} 50%{opacity:0.5} }
-      @keyframes glow { 0%,100%{opacity:0.7} 50%{opacity:1} }
-      @keyframes steam { 0%{opacity:0.8;transform:translateY(0)} 100%{opacity:0;transform:translateY(-20px)} }
-      @keyframes twinkle { 0%,100%{opacity:0.3} 50%{opacity:1} }
-      @keyframes rain { 0%{transform:translateY(-10px);opacity:0} 50%{opacity:0.6} 100%{transform:translateY(90px);opacity:0} }
-      @keyframes blink { 0%,90%,100%{height:6px;y:22} 95%{height:1px;y:25} }
-      @keyframes type { 0%,100%{fill:#00ff41} 50%{fill:#00cc33} }
-      @keyframes cursor { 0%,100%{opacity:1} 50%{opacity:0} }
+      @keyframes flicker{0%,100%{opacity:1}50%{opacity:0.55}}
+      @keyframes glow{0%,100%{opacity:0.6}50%{opacity:1}}
+      @keyframes steam{0%{opacity:0.6;transform:translateY(0)}100%{opacity:0;transform:translateY(-18px)}}
+      @keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:0.9}}
+      @keyframes rain{0%{transform:translateY(-8px);opacity:0}40%{opacity:0.5}100%{transform:translateY(80px);opacity:0}}
+      @keyframes blink{0%,90%,100%{ry:3}95%{ry:0.5}}
+      @keyframes cursor{0%,100%{opacity:1}50%{opacity:0}}
+      @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
+      @keyframes catTail{0%,100%{d:path('M218 230 Q232 222 226 212')}50%{d:path('M218 230 Q228 218 230 208')}}
     </style>
   </defs>
 
-  <!-- Background - Dark room -->
-  <rect width="800" height="280" fill="#0D1117"/>
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="800" height="300" fill="#1a1a2e"/>
+  <!-- Wall accent -->
+  <rect width="800" height="300" fill="url(#wallGrad)"/>
+  <defs>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16213e" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
 
   <!-- Floor -->
-  <rect x="0" y="220" width="800" height="60" fill="#161B22"/>
-  <rect x="0" y="220" width="800" height="2" fill="#21262D"/>
+  <rect x="0" y="240" width="800" height="60" fill="#2d1f14"/>
+  <rect x="0" y="240" width="800" height="2" fill="#3d2a1a" opacity="0.6"/>
+  <!-- Floor boards -->
+  <line x1="0" y1="260" x2="800" y2="260" stroke="#362316" stroke-width="1" opacity="0.3"/>
+  <line x1="100" y1="240" x2="100" y2="300" stroke="#362316" stroke-width="1" opacity="0.15"/>
+  <line x1="250" y1="240" x2="250" y2="300" stroke="#362316" stroke-width="1" opacity="0.15"/>
+  <line x1="420" y1="240" x2="420" y2="300" stroke="#362316" stroke-width="1" opacity="0.15"/>
+  <line x1="580" y1="240" x2="580" y2="300" stroke="#362316" stroke-width="1" opacity="0.15"/>
+  <line x1="700" y1="240" x2="700" y2="300" stroke="#362316" stroke-width="1" opacity="0.15"/>
 
-  <!-- === WINDOW with rain === -->
-  <rect x="40" y="30" width="140" height="130" fill="#1a3a5c" stroke="#30363D" stroke-width="4" rx="2"/>
-  <rect x="46" y="36" width="62" height="58" fill="#0B1929"/>
-  <rect x="112" y="36" width="62" height="58" fill="#0B1929"/>
-  <rect x="46" y="98" width="62" height="56" fill="#0B1929"/>
-  <rect x="112" y="98" width="62" height="56" fill="#0B1929"/>
-  <!-- Moon outside -->
-  <circle cx="145" cy="55" r="14" fill="#C9D1D9">
-    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+  <!-- ===== WINDOW ===== -->
+  <rect x="45" y="35" width="145" height="140" fill="#0f2744" stroke="#6B5B4F" stroke-width="5" rx="2"/>
+  <!-- Window frame cross -->
+  <line x1="117" y1="35" x2="117" y2="175" stroke="#6B5B4F" stroke-width="4"/>
+  <line x1="45" y1="105" x2="190" y2="105" stroke="#6B5B4F" stroke-width="4"/>
+  <!-- Night sky in window -->
+  <rect x="49" y="39" width="65" height="63" fill="#0B1929" rx="1"/>
+  <rect x="120" y="39" width="66" height="63" fill="#0B1929" rx="1"/>
+  <rect x="49" y="108" width="65" height="63" fill="#0B1929" rx="1"/>
+  <rect x="120" y="108" width="66" height="63" fill="#0B1929" rx="1"/>
+  <!-- Moon -->
+  <circle cx="155" cy="58" r="15" fill="#E8DCC8">
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="4s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="140" cy="50" r="12" fill="#0B1929"/>
-  <!-- Stars outside -->
-  <circle cx="70" cy="50" r="2" fill="#58A6FF" style="animation:twinkle 2s infinite"/>
-  <circle cx="90" cy="70" r="1.5" fill="#58A6FF" style="animation:twinkle 3s 0.5s infinite"/>
-  <circle cx="130" cy="42" r="1.5" fill="#58A6FF" style="animation:twinkle 2.5s 1s infinite"/>
+  <circle cx="148" cy="52" r="13" fill="#0B1929"/>
+  <!-- Stars -->
+  <circle cx="70" cy="55" r="1.5" fill="#E8DCC8" style="animation:twinkle 3s infinite"/>
+  <circle cx="92" cy="72" r="1" fill="#E8DCC8" style="animation:twinkle 2.5s 0.8s infinite"/>
+  <circle cx="78" cy="48" r="1" fill="#E8DCC8" style="animation:twinkle 4s 0.3s infinite"/>
+  <circle cx="135" cy="44" r="1.2" fill="#E8DCC8" style="animation:twinkle 3.5s 1.2s infinite"/>
+  <circle cx="170" cy="48" r="1" fill="#E8DCC8" style="animation:twinkle 2s 0.6s infinite"/>
   <!-- Rain -->
-  <line x1="60" y1="40" x2="60" y2="50" stroke="#58A6FF" stroke-width="1" opacity="0.3" style="animation:rain 1s 0s infinite linear"/>
-  <line x1="80" y1="45" x2="80" y2="55" stroke="#58A6FF" stroke-width="1" opacity="0.3" style="animation:rain 0.8s 0.3s infinite linear"/>
-  <line x1="100" y1="42" x2="100" y2="52" stroke="#58A6FF" stroke-width="1" opacity="0.3" style="animation:rain 1.2s 0.1s infinite linear"/>
-  <line x1="120" y1="48" x2="120" y2="58" stroke="#58A6FF" stroke-width="1" opacity="0.3" style="animation:rain 0.9s 0.6s infinite linear"/>
-  <line x1="150" y1="44" x2="150" y2="54" stroke="#58A6FF" stroke-width="1" opacity="0.3" style="animation:rain 1.1s 0.4s infinite linear"/>
+  <line x1="62" y1="110" x2="62" y2="120" stroke="#5a8aad" stroke-width="1" opacity="0.35" style="animation:rain 1s 0s infinite linear"/>
+  <line x1="78" y1="115" x2="78" y2="125" stroke="#5a8aad" stroke-width="1" opacity="0.35" style="animation:rain 0.85s 0.25s infinite linear"/>
+  <line x1="95" y1="112" x2="95" y2="122" stroke="#5a8aad" stroke-width="1" opacity="0.35" style="animation:rain 1.15s 0.5s infinite linear"/>
+  <line x1="130" y1="118" x2="130" y2="128" stroke="#5a8aad" stroke-width="1" opacity="0.35" style="animation:rain 0.9s 0.15s infinite linear"/>
+  <line x1="150" y1="114" x2="150" y2="124" stroke="#5a8aad" stroke-width="1" opacity="0.35" style="animation:rain 1.05s 0.4s infinite linear"/>
+  <line x1="170" y1="110" x2="170" y2="120" stroke="#5a8aad" stroke-width="1" opacity="0.35" style="animation:rain 0.95s 0.7s infinite linear"/>
+  <!-- Curtains -->
+  <rect x="38" y="30" width="12" height="155" fill="#3d2a3d" opacity="0.5" rx="2"/>
+  <rect x="185" y="30" width="12" height="155" fill="#3d2a3d" opacity="0.5" rx="2"/>
   <!-- Window sill -->
-  <rect x="35" y="160" width="150" height="6" fill="#30363D"/>
+  <rect x="36" y="175" width="165" height="7" fill="#6B5B4F"/>
 
-  <!-- === DUAL MONITOR DESK === -->
-  <rect x="250" y="160" width="350" height="12" fill="#21262D"/>
-  <rect x="250" y="172" width="10" height="50" fill="#161B22"/>
-  <rect x="590" y="172" width="10" height="50" fill="#161B22"/>
+  <!-- ===== SMALL PLANT on window sill ===== -->
+  <rect x="55" y="163" width="14" height="14" fill="#5C3A1E" rx="2"/>
+  <circle cx="62" cy="158" r="9" fill="#2D6B3F"/>
+  <circle cx="56" cy="154" r="6" fill="#3A8A52" opacity="0.8"/>
+  <circle cx="68" cy="156" r="5" fill="#48A060" opacity="0.7"/>
 
-  <!-- === MONITOR 1 (main) === -->
-  <rect x="290" y="100" width="130" height="85" fill="#1C1C1C" rx="3"/>
-  <rect x="296" y="106" width="118" height="70" fill="#0D1117" rx="1"/>
-  <!-- Code on screen 1 -->
-  <rect x="302" y="112" width="40" height="3" fill="#C678DD" rx="1"/>
-  <rect x="346" y="112" width="25" height="3" fill="#58A6FF" rx="1"/>
-  <rect x="308" y="118" width="55" height="3" fill="#39D353" rx="1" style="animation:type 2s infinite"/>
-  <rect x="308" y="124" width="35" height="3" fill="#E5C07B" rx="1"/>
-  <rect x="348" y="124" width="20" height="3" fill="#58A6FF" rx="1"/>
-  <rect x="308" y="130" width="45" height="3" fill="#39D353" rx="1"/>
-  <rect x="308" y="136" width="60" height="3" fill="#C678DD" rx="1"/>
-  <rect x="302" y="142" width="30" height="3" fill="#E06C75" rx="1"/>
-  <rect x="336" y="142" width="40" height="3" fill="#58A6FF" rx="1"/>
-  <rect x="308" y="148" width="50" height="3" fill="#39D353" rx="1" style="animation:type 2s 1s infinite"/>
-  <rect x="308" y="154" width="25" height="3" fill="#E5C07B" rx="1"/>
-  <rect x="308" y="160" width="42" height="3" fill="#C678DD" rx="1"/>
-  <!-- Cursor blink -->
-  <rect x="354" y="148" width="2" height="6" fill="#39D353" style="animation:cursor 1s steps(1) infinite"/>
+  <!-- ===== CANDLE on sill ===== -->
+  <rect x="160" y="162" width="8" height="14" fill="#E8DCC8" rx="1"/>
+  <ellipse cx="164" cy="160" rx="3.5" ry="5" fill="#E8A530" style="animation:flicker 0.7s infinite"/>
+  <ellipse cx="164" cy="158" rx="1.8" ry="3" fill="#FFD080" opacity="0.8" style="animation:flicker 0.5s 0.1s infinite"/>
+  <!-- Candle glow -->
+  <circle cx="164" cy="160" r="16" fill="#E8A530" opacity="0.04" style="animation:glow 2s infinite"/>
+
+  <!-- ===== DESK ===== -->
+  <rect x="260" y="175" width="340" height="12" fill="#5C3D22"/>
+  <rect x="260" y="175" width="340" height="3" fill="#6B4828" opacity="0.6"/>
+  <!-- Desk legs -->
+  <rect x="268" y="187" width="8" height="55" fill="#4A3018"/>
+  <rect x="584" y="187" width="8" height="55" fill="#4A3018"/>
+
+  <!-- ===== MONITOR ===== -->
+  <rect x="330" y="108" width="130" height="90" fill="#1C1C1C" rx="4"/>
+  <!-- Screen bezel -->
+  <rect x="336" y="114" width="118" height="72" fill="#0D1117" rx="2"/>
+  <!-- Code on screen -->
+  <rect x="342" y="120" width="38" height="3" fill="#C678DD" rx="1"/>
+  <rect x="384" y="120" width="22" height="3" fill="#61AFEF" rx="1"/>
+  <rect x="348" y="126" width="52" height="3" fill="#98C379" rx="1" style="animation:glow 2.5s infinite"/>
+  <rect x="348" y="132" width="32" height="3" fill="#E5C07B" rx="1"/>
+  <rect x="384" y="132" width="18" height="3" fill="#61AFEF" rx="1"/>
+  <rect x="348" y="138" width="44" height="3" fill="#98C379" rx="1"/>
+  <rect x="342" y="144" width="55" height="3" fill="#C678DD" rx="1"/>
+  <rect x="348" y="150" width="28" height="3" fill="#E06C75" rx="1"/>
+  <rect x="380" y="150" width="36" height="3" fill="#61AFEF" rx="1"/>
+  <rect x="348" y="156" width="48" height="3" fill="#98C379" rx="1"/>
+  <rect x="348" y="162" width="20" height="3" fill="#E5C07B" rx="1"/>
+  <rect x="372" y="162" width="35" height="3" fill="#98C379" rx="1"/>
+  <rect x="348" y="168" width="40" height="3" fill="#C678DD" rx="1"/>
+  <!-- Cursor -->
+  <rect x="392" y="168" width="2" height="6" fill="#98C379" style="animation:cursor 1s steps(1) infinite"/>
   <!-- Monitor stand -->
-  <rect x="345" y="185" width="20" height="10" fill="#1C1C1C"/>
+  <rect x="380" y="198" width="30" height="6" fill="#1C1C1C" rx="1"/>
+  <rect x="370" y="203" width="50" height="4" fill="#2A2A2A" rx="1"/>
+  <!-- Monitor glow on desk -->
+  <ellipse cx="395" cy="210" rx="60" ry="6" fill="#61AFEF" opacity="0.03"/>
 
-  <!-- === MONITOR 2 (side) === -->
-  <rect x="440" y="108" width="100" height="70" fill="#1C1C1C" rx="3"/>
-  <rect x="445" y="113" width="90" height="58" fill="#0D1117" rx="1"/>
-  <!-- Terminal on screen 2 -->
-  <rect x="450" y="118" width="30" height="3" fill="#39D353" rx="1"/>
-  <rect x="482" y="118" width="20" height="3" fill="#C9D1D9" rx="1"/>
-  <rect x="450" y="124" width="45" height="3" fill="#C9D1D9" rx="1"/>
-  <rect x="450" y="130" width="35" height="3" fill="#58A6FF" rx="1"/>
-  <rect x="450" y="136" width="50" height="3" fill="#C9D1D9" rx="1"/>
-  <rect x="450" y="142" width="25" height="3" fill="#39D353" rx="1"/>
-  <rect x="477" y="142" width="2" height="5" fill="#39D353" style="animation:cursor 1s steps(1) infinite"/>
-  <!-- Monitor stand -->
-  <rect x="480" y="178" width="20" height="10" fill="#1C1C1C"/>
+  <!-- ===== KEYBOARD ===== -->
+  <rect x="350" y="210" width="80" height="10" fill="#2D2D2D" rx="2"/>
+  <!-- Keys row 1 -->
+  <rect x="354" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="361" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="368" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="375" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="382" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="389" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="396" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="403" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="410" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="417" y="212" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <!-- Keys row 2 -->
+  <rect x="356" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="363" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="370" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="377" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="384" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="391" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="398" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="405" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
+  <rect x="412" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
 
-  <!-- === KEYBOARD === -->
-  <rect x="310" y="195" width="90" height="12" fill="#2D2D2D" rx="2"/>
-  <rect x="314" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="322" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="330" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="338" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="346" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="354" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="362" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="370" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="378" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="386" y="197" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="318" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="326" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="334" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="342" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="350" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="358" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="366" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="374" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
-  <rect x="382" y="202" width="6" height="3" fill="#3D3D3D" rx="0.5"/>
+  <!-- ===== CHARACTER (hoodie, sitting) ===== -->
+  <g style="animation:breathe 3.5s ease-in-out infinite">
+    <!-- Head -->
+    <rect x="378" y="96" width="24" height="24" fill="#D4A574" rx="3"/>
+    <!-- Hair -->
+    <rect x="376" y="92" width="28" height="12" fill="#1C1C1C" rx="3"/>
+    <rect x="376" y="98" width="5" height="10" fill="#1C1C1C"/>
+    <rect x="400" y="98" width="4" height="8" fill="#1C1C1C"/>
+    <!-- Eyes -->
+    <ellipse cx="385" cy="107" rx="2.5" ry="3" fill="#0D1117" style="animation:blink 5s infinite"/>
+    <ellipse cx="395" cy="107" rx="2.5" ry="3" fill="#0D1117" style="animation:blink 5s 0.1s infinite"/>
+    <!-- Eye shine -->
+    <circle cx="386" cy="106" r="1" fill="#fff" opacity="0.5"/>
+    <circle cx="396" cy="106" r="1" fill="#fff" opacity="0.5"/>
+    <!-- Mouth -->
+    <rect x="387" y="113" width="6" height="1.5" fill="#B8896A" rx="0.5"/>
+    <!-- Headphones -->
+    <path d="M376 102 Q374 88 390 86 Q406 88 404 102" stroke="#333" stroke-width="3" fill="none"/>
+    <rect x="372" y="100" width="6" height="10" fill="#333" rx="2"/>
+    <rect x="402" y="100" width="6" height="10" fill="#333" rx="2"/>
+    <rect x="373" y="102" width="4" height="6" fill="#555" rx="1"/>
+    <rect x="403" y="102" width="4" height="6" fill="#555" rx="1"/>
+    <!-- HOODIE body -->
+    <rect x="372" y="120" width="36" height="34" fill="#2D4A2D" rx="3"/>
+    <!-- Hoodie hood -->
+    <rect x="382" y="118" width="16" height="6" fill="#243D24" rx="2"/>
+    <!-- Hoodie pocket -->
+    <rect x="380" y="140" width="20" height="8" fill="#243D24" rx="2"/>
+    <!-- Hoodie strings -->
+    <line x1="386" y1="120" x2="386" y2="128" stroke="#4A6B4A" stroke-width="0.8"/>
+    <line x1="394" y1="120" x2="394" y2="128" stroke="#4A6B4A" stroke-width="0.8"/>
+    <!-- Arms reaching keyboard -->
+    <rect x="362" y="130" width="12" height="8" fill="#2D4A2D" rx="3"/>
+    <rect x="406" y="130" width="12" height="8" fill="#2D4A2D" rx="3"/>
+    <!-- Hands on keyboard -->
+    <rect x="356" y="132" width="8" height="5" fill="#D4A574" rx="1.5"/>
+    <rect x="416" y="132" width="8" height="5" fill="#D4A574" rx="1.5"/>
+    <!-- Chair -->
+    <rect x="368" y="152" width="44" height="40" fill="#3D2A1A" rx="3"/>
+    <rect x="372" y="156" width="36" height="32" fill="#4A3520" rx="2"/>
+    <!-- Chair back -->
+    <rect x="364" y="126" width="6" height="70" fill="#3D2A1A" rx="2"/>
+    <rect x="410" y="126" width="6" height="70" fill="#3D2A1A" rx="2"/>
+  </g>
 
-  <!-- === PIXEL CHARACTER === -->
-  <!-- Head -->
-  <rect x="370" y="86" width="24" height="24" fill="#D4A574" rx="2"/>
-  <!-- Hair -->
-  <rect x="368" y="82" width="28" height="10" fill="#1C1C1C" rx="2"/>
-  <rect x="368" y="86" width="6" height="12" fill="#1C1C1C"/>
-  <!-- Eyes -->
-  <rect x="376" y="94" width="5" height="6" fill="#0D1117" rx="1" style="animation:blink 5s infinite"/>
-  <rect x="385" y="94" width="5" height="6" fill="#0D1117" rx="1" style="animation:blink 5s 0.1s infinite"/>
-  <!-- Mouth -->
-  <rect x="380" y="104" width="6" height="2" fill="#B8896A" rx="1"/>
-  <!-- Body (hoodie) -->
-  <rect x="366" y="110" width="32" height="30" fill="#2D333B" rx="2"/>
-  <!-- Hoodie hood -->
-  <rect x="378" y="110" width="8" height="6" fill="#22272E"/>
-  <!-- Arms -->
-  <rect x="356" y="118" width="14" height="8" fill="#2D333B" rx="2"/>
-  <rect x="394" y="118" width="14" height="8" fill="#2D333B" rx="2"/>
-  <!-- Hands on keyboard -->
-  <rect x="348" y="120" width="8" height="6" fill="#D4A574" rx="1"/>
-  <rect x="408" y="120" width="8" height="6" fill="#D4A574" rx="1"/>
-  <!-- Chair -->
-  <rect x="360" y="138" width="44" height="40" fill="#21262D" rx="3"/>
-  <rect x="364" y="142" width="36" height="32" fill="#2D333B" rx="2"/>
-
-  <!-- === COFFEE === -->
-  <rect x="280" y="178" width="18" height="22" fill="#30363D" rx="2"/>
-  <rect x="280" y="178" width="18" height="5" fill="#6F4E37" rx="2"/>
-  <rect x="298" y="182" width="6" height="12" fill="none" stroke="#30363D" stroke-width="2" rx="3"/>
+  <!-- ===== COFFEE MUG ===== -->
+  <rect x="290" y="190" width="18" height="22" fill="#E0D5C8" rx="2"/>
+  <ellipse cx="299" cy="190" rx="9" ry="3" fill="#D4C4B0"/>
+  <rect x="290" y="190" width="18" height="5" fill="#6F4E37" rx="2"/>
+  <!-- Handle -->
+  <path d="M308 196 Q314 196 314 204 Q314 210 308 210" stroke="#E0D5C8" stroke-width="2.5" fill="none"/>
   <!-- Steam -->
-  <line x1="285" y1="176" x2="285" y2="166" stroke="#484F58" stroke-width="1.5" opacity="0.3" style="animation:steam 2s infinite"/>
-  <line x1="290" y1="174" x2="290" y2="162" stroke="#484F58" stroke-width="1.5" opacity="0.3" style="animation:steam 2s 0.7s infinite"/>
-  <line x1="295" y1="176" x2="295" y2="164" stroke="#484F58" stroke-width="1.5" opacity="0.3" style="animation:steam 2s 1.3s infinite"/>
+  <line x1="295" y1="188" x2="294" y2="176" stroke="#9a9a9a" stroke-width="1.5" opacity="0.2" style="animation:steam 2.2s infinite"/>
+  <line x1="300" y1="186" x2="301" y2="172" stroke="#9a9a9a" stroke-width="1.5" opacity="0.2" style="animation:steam 2.2s 0.7s infinite"/>
+  <line x1="305" y1="188" x2="304" y2="174" stroke="#9a9a9a" stroke-width="1.5" opacity="0.2" style="animation:steam 2.2s 1.4s infinite"/>
 
-  <!-- === HEADPHONES on desk === -->
-  <path d="M555 185 Q555 170 565 170 Q575 170 575 185" fill="none" stroke="#484F58" stroke-width="3"/>
-  <rect x="550" y="183" width="8" height="12" fill="#2D333B" rx="2"/>
-  <rect x="572" y="183" width="8" height="12" fill="#2D333B" rx="2"/>
+  <!-- ===== HEADPHONES on desk (spare) ===== -->
+  <path d="M460 208 Q460 196 470 196 Q480 196 480 208" fill="none" stroke="#555" stroke-width="2.5"/>
+  <rect x="456" y="206" width="6" height="9" fill="#444" rx="2"/>
+  <rect x="478" y="206" width="6" height="9" fill="#444" rx="2"/>
 
-  <!-- === BOOKSHELF === -->
-  <rect x="660" y="40" width="110" height="180" fill="#21262D" stroke="#30363D" stroke-width="2"/>
-  <rect x="660" y="90" width="110" height="3" fill="#30363D"/>
-  <rect x="660" y="140" width="110" height="3" fill="#30363D"/>
+  <!-- ===== BOOKS stacked on desk ===== -->
+  <rect x="500" y="198" width="30" height="7" fill="#E06C75" rx="1"/>
+  <rect x="498" y="192" width="34" height="7" fill="#61AFEF" rx="1"/>
+  <rect x="502" y="186" width="28" height="7" fill="#E5C07B" rx="1"/>
+
+  <!-- ===== BOOKSHELF ===== -->
+  <rect x="660" y="45" width="110" height="195" fill="#3D2A1A" stroke="#4A3520" stroke-width="2"/>
+  <rect x="660" y="100" width="110" height="3" fill="#4A3520"/>
+  <rect x="660" y="155" width="110" height="3" fill="#4A3520"/>
   <!-- Books row 1 -->
-  <rect x="668" y="48" width="12" height="40" fill="#E06C75" rx="1"/>
-  <rect x="682" y="52" width="10" height="36" fill="#58A6FF" rx="1"/>
-  <rect x="694" y="46" width="14" height="42" fill="#E5C07B" rx="1"/>
-  <rect x="710" y="50" width="10" height="38" fill="#C678DD" rx="1"/>
-  <rect x="722" y="48" width="12" height="40" fill="#39D353" rx="1"/>
-  <rect x="736" y="54" width="10" height="34" fill="#E06C75" rx="1"/>
-  <rect x="748" y="46" width="14" height="42" fill="#58A6FF" rx="1"/>
+  <rect x="668" y="52" width="12" height="46" fill="#E06C75" rx="1"/>
+  <rect x="682" y="56" width="10" height="42" fill="#61AFEF" rx="1"/>
+  <rect x="694" y="50" width="14" height="48" fill="#E5C07B" rx="1"/>
+  <rect x="710" y="54" width="10" height="44" fill="#C678DD" rx="1"/>
+  <rect x="722" y="52" width="12" height="46" fill="#98C379" rx="1"/>
+  <rect x="736" y="58" width="10" height="40" fill="#E06C75" rx="1"/>
+  <rect x="748" y="50" width="14" height="48" fill="#61AFEF" rx="1"/>
   <!-- Books row 2 -->
-  <rect x="668" y="98" width="14" height="40" fill="#39D353" rx="1"/>
-  <rect x="684" y="102" width="10" height="36" fill="#E5C07B" rx="1"/>
-  <rect x="696" y="96" width="12" height="42" fill="#C678DD" rx="1"/>
-  <rect x="710" y="100" width="14" height="38" fill="#58A6FF" rx="1"/>
-  <rect x="726" y="98" width="10" height="40" fill="#E06C75" rx="1"/>
-  <rect x="738" y="104" width="12" height="34" fill="#39D353" rx="1"/>
-  <rect x="752" y="96" width="10" height="42" fill="#E5C07B" rx="1"/>
-  <!-- Books row 3 -->
-  <rect x="668" y="148" width="10" height="38" fill="#58A6FF" rx="1"/>
-  <rect x="680" y="146" width="14" height="42" fill="#C678DD" rx="1"/>
-  <rect x="696" y="150" width="12" height="36" fill="#39D353" rx="1"/>
-  <rect x="710" y="148" width="10" height="40" fill="#E06C75" rx="1"/>
+  <rect x="668" y="108" width="14" height="44" fill="#98C379" rx="1"/>
+  <rect x="684" y="112" width="10" height="40" fill="#E5C07B" rx="1"/>
+  <rect x="696" y="106" width="12" height="46" fill="#C678DD" rx="1"/>
+  <rect x="710" y="110" width="14" height="42" fill="#61AFEF" rx="1"/>
+  <rect x="726" y="108" width="10" height="44" fill="#E06C75" rx="1"/>
+  <rect x="738" y="114" width="12" height="38" fill="#98C379" rx="1"/>
+  <rect x="752" y="106" width="10" height="46" fill="#E5C07B" rx="1"/>
+  <!-- Books row 3 + items -->
+  <rect x="668" y="162" width="10" height="42" fill="#61AFEF" rx="1"/>
+  <rect x="680" y="160" width="14" height="44" fill="#C678DD" rx="1"/>
+  <rect x="696" y="164" width="12" height="40" fill="#98C379" rx="1"/>
+  <!-- Small figurine on shelf -->
+  <rect x="720" y="190" width="8" height="14" fill="#E5C07B" rx="1"/>
+  <circle cx="724" cy="187" r="5" fill="#D4A574"/>
+  <!-- Small plant on shelf -->
+  <rect x="745" y="192" width="10" height="12" fill="#5C3A1E" rx="1"/>
+  <circle cx="750" cy="188" r="7" fill="#2D6B3F"/>
 
-  <!-- === RGB LED STRIP under desk === -->
-  <rect x="255" y="158" width="340" height="2" fill="#58A6FF" opacity="0.3">
-    <animate attributeName="fill" values="#58A6FF;#C678DD;#39D353;#58A6FF" dur="6s" repeatCount="indefinite"/>
-  </rect>
+  <!-- ===== RUG ===== -->
+  <ellipse cx="400" cy="260" rx="130" ry="16" fill="#3D1F1F" opacity="0.35"/>
+  <ellipse cx="400" cy="260" rx="110" ry="12" fill="#4A2828" opacity="0.25"/>
 
-  <!-- === SMALL LAMP on desk edge === -->
-  <rect x="554" y="150" width="4" height="20" fill="#484F58"/>
-  <ellipse cx="556" cy="148" rx="12" ry="6" fill="#39D353" opacity="0.08" style="animation:glow 3s infinite"/>
-  <circle cx="556" cy="148" r="4" fill="#39D353" opacity="0.5" style="animation:flicker 1.5s infinite"/>
+  <!-- ===== CAT sleeping ===== -->
+  <ellipse cx="215" cy="232" rx="18" ry="10" fill="#706050"/>
+  <circle cx="200" cy="228" r="7" fill="#706050"/>
+  <!-- Cat ears -->
+  <polygon points="195,223 198,216 201,223" fill="#706050"/>
+  <polygon points="199,223 202,216 205,223" fill="#706050"/>
+  <polygon points="196,222 198,217 200,222" fill="#5A4A3A"/>
+  <polygon points="200,222 202,217 204,222" fill="#5A4A3A"/>
+  <!-- Cat eyes (closed) -->
+  <line x1="197" y1="228" x2="200" y2="228" stroke="#3D2A1A" stroke-width="1"/>
+  <line x1="203" y1="228" x2="206" y2="228" stroke="#3D2A1A" stroke-width="1"/>
+  <!-- Cat tail -->
+  <path d="M233 232 Q245 224 240 214" stroke="#706050" stroke-width="3" fill="none">
+    <animate attributeName="d" values="M233 232 Q245 224 240 214;M233 232 Q242 220 244 210;M233 232 Q245 224 240 214" dur="4s" repeatCount="indefinite"/>
+  </path>
 
-  <!-- === AMBIENT PARTICLES === -->
-  <circle cx="100" cy="200" r="1" fill="#58A6FF" opacity="0.2" style="animation:twinkle 3s infinite"/>
-  <circle cx="500" cy="100" r="1" fill="#39D353" opacity="0.15" style="animation:twinkle 4s 1s infinite"/>
-  <circle cx="300" cy="80" r="1" fill="#58A6FF" opacity="0.2" style="animation:twinkle 3.5s 0.5s infinite"/>
-  <circle cx="620" cy="150" r="1" fill="#C678DD" opacity="0.15" style="animation:twinkle 2.5s 1.5s infinite"/>
+  <!-- ===== DESK LAMP ===== -->
+  <rect x="272" y="145" width="5" height="32" fill="#6B5B4F"/>
+  <path d="M258 145 L275 130 L292 145 Z" fill="#D4A574" opacity="0.9"/>
+  <!-- Lamp light cone -->
+  <polygon points="260,145 275,135 290,145 300,180 250,180" fill="#E8A530" opacity="0.03" style="animation:glow 3s infinite"/>
+
+  <!-- ===== WALL POSTER ===== -->
+  <rect x="510" y="55" width="70" height="90" fill="#1C1C1C" stroke="#333" stroke-width="2" rx="2"/>
+  <rect x="516" y="61" width="58" height="50" fill="#0D1117"/>
+  <!-- Poster code art -->
+  <text x="545" y="78" text-anchor="middle" fill="#98C379" font-family="monospace" font-size="7">&lt;/&gt;</text>
+  <text x="545" y="92" text-anchor="middle" fill="#61AFEF" font-family="monospace" font-size="6">build</text>
+  <text x="545" y="102" text-anchor="middle" fill="#E5C07B" font-family="monospace" font-size="6">ship</text>
+  <text x="545" y="130" text-anchor="middle" fill="#555" font-family="monospace" font-size="5">repeat</text>
+
+  <!-- ===== WARM AMBIENT ===== -->
+  <circle cx="164" cy="155" r="25" fill="#E8A530" opacity="0.02" style="animation:glow 2.5s infinite"/>
+  <circle cx="300" cy="185" r="15" fill="#E8A530" opacity="0.015"/>
 </svg>
