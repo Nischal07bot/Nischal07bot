@@ -139,7 +139,14 @@
   <rect x="405" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
   <rect x="412" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
 
-  <!-- ===== CHARACTER (hoodie, sitting) ===== -->
+  <!-- ===== CHAIR (drawn first so it's behind character) ===== -->
+  <!-- Chair back (behind character) -->
+  <rect x="368" y="118" width="44" height="78" fill="#3D2A1A" rx="4"/>
+  <rect x="372" y="122" width="36" height="70" fill="#4A3520" rx="3"/>
+  <!-- Chair back top -->
+  <rect x="366" y="114" width="48" height="8" fill="#3D2A1A" rx="4"/>
+
+  <!-- ===== CHARACTER (hoodie, sitting — drawn on top of chair) ===== -->
   <g style="animation:breathe 3.5s ease-in-out infinite">
     <!-- Head -->
     <rect x="378" y="96" width="24" height="24" fill="#D4A574" rx="3"/>
@@ -176,13 +183,17 @@
     <!-- Hands on keyboard -->
     <rect x="356" y="132" width="8" height="5" fill="#D4A574" rx="1.5"/>
     <rect x="416" y="132" width="8" height="5" fill="#D4A574" rx="1.5"/>
-    <!-- Chair -->
-    <rect x="368" y="152" width="44" height="40" fill="#3D2A1A" rx="3"/>
-    <rect x="372" y="156" width="36" height="32" fill="#4A3520" rx="2"/>
-    <!-- Chair back -->
-    <rect x="364" y="126" width="6" height="70" fill="#3D2A1A" rx="2"/>
-    <rect x="410" y="126" width="6" height="70" fill="#3D2A1A" rx="2"/>
   </g>
+
+  <!-- Chair seat (visible below character) -->
+  <rect x="368" y="152" width="44" height="12" fill="#3D2A1A" rx="3"/>
+  <rect x="372" y="154" width="36" height="8" fill="#4A3520" rx="2"/>
+  <!-- Chair legs -->
+  <rect x="372" y="164" width="5" height="28" fill="#3D2A1A" rx="1"/>
+  <rect x="403" y="164" width="5" height="28" fill="#3D2A1A" rx="1"/>
+  <!-- Chair wheels -->
+  <circle cx="374" cy="193" r="3" fill="#333"/>
+  <circle cx="406" cy="193" r="3" fill="#333"/>
 
   <!-- ===== COFFEE MUG ===== -->
   <rect x="290" y="190" width="18" height="22" fill="#E0D5C8" rx="2"/>

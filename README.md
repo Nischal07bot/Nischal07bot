@@ -81,9 +81,6 @@ AI-powered chat application — real-time messaging with intelligence baked in.
 **📹 video_chat / video_confrence**  
 Real-time video communication apps using WebRTC. Peer-to-peer, low latency.
 
-**🚕 ZapCab**  
-Ride-hailing platform — booking, matching, real-time tracking.
-
 **💼 Get-Naukri**  
 Full-stack job portal with React, Redux Toolkit, Express, MongoDB, and Cloudinary.
 
@@ -96,7 +93,7 @@ Collaborative workspace tool for teams to build together.
 
 <div align="center">
 
-**Open Source:** Contributed to [**libreswan**](https://github.com/libreswan/libreswan) — IPsec VPN implementation for Linux. Also part of [**CODE-SMITHS**](https://github.com/Nischal07bot/CODE-SMITHS).
+**Open Source:** Contributed to [**Chromium**](https://www.chromium.org/) and currently contributing to [**libreswan**](https://github.com/libreswan/libreswan) — IPsec VPN implementation for Linux.
 
 </div>
 
