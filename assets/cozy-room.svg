@@ -10,6 +10,8 @@
       @keyframes cursor{0%,100%{opacity:1}50%{opacity:0}}
       @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
       @keyframes catTail{0%,100%{d:path('M218 230 Q232 222 226 212')}50%{d:path('M218 230 Q228 218 230 208')}}
+      @keyframes dogTail{0%,100%{transform:rotate(0)}50%{transform:rotate(20deg)}}
+      @keyframes dogPant{0%,100%{ry:2}50%{ry:2.8}}
     </style>
   </defs>
 
@@ -139,66 +141,82 @@
   <rect x="405" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
   <rect x="412" y="216" width="5" height="2.5" fill="#404040" rx="0.3"/>
 
-  <!-- ===== CHAIR (drawn first so it's behind character) ===== -->
-  <!-- Chair back (behind character, shorter and narrower) -->
-  <rect x="374" y="124" width="32" height="32" fill="#3D2A1A" rx="3"/>
-  <rect x="377" y="127" width="26" height="26" fill="#4A3520" rx="2"/>
-  <!-- Chair back top rim -->
-  <rect x="372" y="121" width="36" height="5" fill="#3D2A1A" rx="3"/>
-
-  <!-- ===== CHARACTER (hoodie, sitting — drawn on top of chair) ===== -->
+  <!-- ===== CHARACTER (hoodie, STANDING at desk) ===== -->
+  <!-- Upper body only — desk naturally hides the lower half -->
   <g style="animation:breathe 3.5s ease-in-out infinite">
-    <!-- Head -->
-    <rect x="378" y="96" width="24" height="24" fill="#D4A574" rx="3"/>
-    <!-- Hair -->
-    <rect x="376" y="92" width="28" height="12" fill="#1C1C1C" rx="3"/>
-    <rect x="376" y="98" width="5" height="10" fill="#1C1C1C"/>
-    <rect x="400" y="98" width="4" height="8" fill="#1C1C1C"/>
-    <!-- Eyes -->
-    <ellipse cx="385" cy="107" rx="2.5" ry="3" fill="#0D1117" style="animation:blink 5s infinite"/>
-    <ellipse cx="395" cy="107" rx="2.5" ry="3" fill="#0D1117" style="animation:blink 5s 0.1s infinite"/>
-    <!-- Eye shine -->
-    <circle cx="386" cy="106" r="1" fill="#fff" opacity="0.5"/>
-    <circle cx="396" cy="106" r="1" fill="#fff" opacity="0.5"/>
-    <!-- Mouth -->
-    <rect x="387" y="113" width="6" height="1.5" fill="#B8896A" rx="0.5"/>
-    <!-- Headphones -->
-    <path d="M376 102 Q374 88 390 86 Q406 88 404 102" stroke="#333" stroke-width="3" fill="none"/>
-    <rect x="372" y="100" width="6" height="10" fill="#333" rx="2"/>
-    <rect x="402" y="100" width="6" height="10" fill="#333" rx="2"/>
-    <rect x="373" y="102" width="4" height="6" fill="#555" rx="1"/>
-    <rect x="403" y="102" width="4" height="6" fill="#555" rx="1"/>
     <!-- HOODIE body -->
-    <rect x="372" y="120" width="36" height="34" fill="#2D4A2D" rx="3"/>
-    <!-- Hoodie hood -->
-    <rect x="382" y="118" width="16" height="6" fill="#243D24" rx="2"/>
+    <rect x="322" y="112" width="36" height="64" fill="#2D4A2D" rx="4"/>
+    <!-- Hoodie hood collar -->
+    <rect x="330" y="110" width="20" height="6" fill="#243D24" rx="2"/>
+    <!-- Hoodie center line -->
+    <line x1="340" y1="112" x2="340" y2="176" stroke="#243D24" stroke-width="1.2"/>
     <!-- Hoodie pocket -->
-    <rect x="380" y="140" width="20" height="8" fill="#243D24" rx="2"/>
+    <rect x="328" y="150" width="24" height="12" fill="#243D24" rx="3"/>
     <!-- Hoodie strings -->
-    <line x1="386" y1="120" x2="386" y2="128" stroke="#4A6B4A" stroke-width="0.8"/>
-    <line x1="394" y1="120" x2="394" y2="128" stroke="#4A6B4A" stroke-width="0.8"/>
-    <!-- Arms reaching keyboard -->
-    <rect x="362" y="130" width="12" height="8" fill="#2D4A2D" rx="3"/>
-    <rect x="406" y="130" width="12" height="8" fill="#2D4A2D" rx="3"/>
-    <!-- Hands on keyboard -->
-    <rect x="356" y="132" width="8" height="5" fill="#D4A574" rx="1.5"/>
-    <rect x="416" y="132" width="8" height="5" fill="#D4A574" rx="1.5"/>
+    <line x1="335" y1="112" x2="334" y2="126" stroke="#4A6B4A" stroke-width="0.8"/>
+    <circle cx="334" cy="127" r="1.3" fill="#4A6B4A"/>
+    <line x1="345" y1="112" x2="346" y2="126" stroke="#4A6B4A" stroke-width="0.8"/>
+    <circle cx="346" cy="127" r="1.3" fill="#4A6B4A"/>
+
+    <!-- Left arm (resting at side) -->
+    <rect x="312" y="120" width="12" height="42" fill="#2D4A2D" rx="4"/>
+    <rect x="313" y="160" width="10" height="7" fill="#D4A574" rx="2.5"/>
+
+    <!-- Right arm (reaching toward keyboard) -->
+    <rect x="356" y="120" width="12" height="34" fill="#2D4A2D" rx="4"/>
+    <!-- Right forearm angled toward desk -->
+    <rect x="360" y="150" width="10" height="18" fill="#2D4A2D" rx="3"/>
+    <!-- Right hand on desk -->
+    <rect x="362" y="166" width="9" height="7" fill="#D4A574" rx="2.5"/>
+
+    <!-- Head -->
+    <rect x="325" y="80" width="30" height="30" fill="#D4A574" rx="5"/>
+    <!-- Hair -->
+    <rect x="323" y="75" width="34" height="16" fill="#1C1C1C" rx="5"/>
+    <rect x="323" y="85" width="5" height="14" fill="#1C1C1C"/>
+    <rect x="354" y="85" width="4" height="12" fill="#1C1C1C"/>
+    <!-- Messy fringe -->
+    <rect x="327" y="73" width="10" height="5" fill="#1C1C1C" rx="2"/>
+    <rect x="339" y="71" width="12" height="5" fill="#1C1C1C" rx="3"/>
+    <rect x="349" y="73" width="6" height="4" fill="#1C1C1C" rx="2"/>
+
+    <!-- Eyes (looking toward monitor) -->
+    <ellipse cx="337" cy="94" rx="2.5" ry="3" fill="#0D1117" style="animation:blink 5s infinite"/>
+    <ellipse cx="349" cy="94" rx="2.5" ry="3" fill="#0D1117" style="animation:blink 5s 0.1s infinite"/>
+    <!-- Eye shine -->
+    <circle cx="338" cy="93" r="1" fill="#fff" opacity="0.5"/>
+    <circle cx="350" cy="93" r="1" fill="#fff" opacity="0.5"/>
+    <!-- Mouth (slight smile) -->
+    <path d="M336 101 Q340 104 344 101" stroke="#B8896A" stroke-width="1.3" fill="none"/>
+
+    <!-- Headphones -->
+    <path d="M323 90 Q321 72 340 70 Q359 72 357 90" stroke="#333" stroke-width="3" fill="none"/>
+    <rect x="319" y="87" width="6" height="12" fill="#333" rx="2"/>
+    <rect x="355" y="87" width="6" height="12" fill="#333" rx="2"/>
+    <rect x="320" y="89" width="4" height="8" fill="#555" rx="1"/>
+    <rect x="356" y="89" width="4" height="8" fill="#555" rx="1"/>
   </g>
 
-  <!-- Chair seat (visible below character) -->
-  <rect x="370" y="153" width="40" height="8" fill="#3D2A1A" rx="3"/>
-  <rect x="373" y="155" width="34" height="4" fill="#4A3520" rx="2"/>
-  <!-- Chair center pole -->
-  <rect x="387" y="161" width="6" height="22" fill="#333" rx="1"/>
-  <!-- Chair base (5-star) -->
-  <line x1="368" y1="184" x2="412" y2="184" stroke="#333" stroke-width="3" stroke-linecap="round"/>
-  <line x1="380" y1="184" x2="372" y2="190" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="400" y1="184" x2="408" y2="190" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- ===== EMPTY CHAIR (pushed aside, right of desk) ===== -->
+  <!-- Chair back -->
+  <rect x="618" y="155" width="28" height="38" fill="#3D2A1A" rx="3"/>
+  <rect x="621" y="158" width="22" height="32" fill="#4A3520" rx="2"/>
+  <!-- Chair back top -->
+  <rect x="616" y="152" width="32" height="5" fill="#3D2A1A" rx="3"/>
+  <!-- Chair seat -->
+  <rect x="614" y="195" width="36" height="8" fill="#3D2A1A" rx="3"/>
+  <rect x="617" y="197" width="30" height="4" fill="#4A3520" rx="2"/>
+  <!-- Chair pole -->
+  <rect x="629" y="203" width="6" height="24" fill="#333" rx="1"/>
+  <!-- Chair base -->
+  <line x1="612" y1="228" x2="652" y2="228" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="622" y1="228" x2="616" y2="234" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+  <line x1="642" y1="228" x2="648" y2="234" stroke="#333" stroke-width="2" stroke-linecap="round"/>
   <!-- Chair wheels -->
-  <circle cx="370" cy="186" r="2.5" fill="#444"/>
-  <circle cx="410" cy="186" r="2.5" fill="#444"/>
-  <circle cx="372" cy="192" r="2" fill="#444"/>
-  <circle cx="408" cy="192" r="2" fill="#444"/>
+  <circle cx="614" cy="230" r="2.5" fill="#444"/>
+  <circle cx="650" cy="230" r="2.5" fill="#444"/>
+  <circle cx="616" cy="236" r="2" fill="#444"/>
+  <circle cx="648" cy="236" r="2" fill="#444"/>
 
   <!-- ===== COFFEE MUG ===== -->
   <rect x="290" y="190" width="18" height="22" fill="#E0D5C8" rx="2"/>
@@ -271,6 +289,42 @@
   <path d="M233 232 Q245 224 240 214" stroke="#706050" stroke-width="3" fill="none">
     <animate attributeName="d" values="M233 232 Q245 224 240 214;M233 232 Q242 220 244 210;M233 232 Q245 224 240 214" dur="4s" repeatCount="indefinite"/>
   </path>
+
+  <!-- ===== DOG (sitting on floor) ===== -->
+  <!-- Body -->
+  <ellipse cx="545" cy="252" rx="16" ry="11" fill="#C4956A"/>
+  <!-- Chest/belly lighter -->
+  <ellipse cx="540" cy="256" rx="8" ry="7" fill="#D4A574" opacity="0.5"/>
+  <!-- Back legs (sitting) -->
+  <rect x="552" y="254" width="8" height="8" fill="#C4956A" rx="2"/>
+  <rect x="533" y="254" width="8" height="8" fill="#C4956A" rx="2"/>
+  <!-- Front paws -->
+  <rect x="530" y="258" width="6" height="4" fill="#B8896A" rx="1.5"/>
+  <rect x="542" y="258" width="6" height="4" fill="#B8896A" rx="1.5"/>
+  <!-- Head -->
+  <circle cx="530" cy="240" r="10" fill="#C4956A"/>
+  <!-- Snout -->
+  <ellipse cx="523" cy="243" rx="6" ry="4" fill="#D4A574"/>
+  <!-- Nose -->
+  <ellipse cx="520" cy="242" rx="2.5" ry="1.8" fill="#333"/>
+  <!-- Eyes -->
+  <circle cx="527" cy="237" r="2" fill="#1C1C1C"/>
+  <circle cx="534" cy="237" r="2" fill="#1C1C1C"/>
+  <!-- Eye shine -->
+  <circle cx="528" cy="236" r="0.7" fill="#fff" opacity="0.5"/>
+  <circle cx="535" cy="236" r="0.7" fill="#fff" opacity="0.5"/>
+  <!-- Tongue (panting) -->
+  <ellipse cx="522" cy="247" rx="2" ry="2" fill="#E06C75" style="animation:dogPant 1.5s infinite"/>
+  <!-- Ears (floppy) -->
+  <ellipse cx="524" cy="232" rx="5" ry="7" fill="#A0764E" transform="rotate(-15 524 232)"/>
+  <ellipse cx="537" cy="233" rx="4" ry="6" fill="#A0764E" transform="rotate(10 537 233)"/>
+  <!-- Tail (wagging) -->
+  <g transform-origin="560 250" style="animation:dogTail 0.6s ease-in-out infinite">
+    <path d="M560 250 Q570 240 568 230" stroke="#C4956A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Collar -->
+  <rect x="525" y="248" width="12" height="3" fill="#E06C75" rx="1"/>
+  <circle cx="531" cy="251" r="1.5" fill="#FFD700"/>
 
   <!-- ===== DESK LAMP ===== -->
   <rect x="272" y="145" width="5" height="32" fill="#6B5B4F"/>
