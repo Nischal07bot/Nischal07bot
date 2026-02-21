@@ -1,69 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130">
   <defs>
     <style>
-      @keyframes flame1 { 0%,100%{d:path('M70 100 Q75 60 85 50 Q95 40 100 55 Q105 40 115 50 Q125 60 130 100 Z')} 25%{d:path('M70 100 Q78 55 88 45 Q95 35 100 50 Q108 42 118 48 Q128 58 130 100 Z')} 50%{d:path('M70 100 Q72 65 82 55 Q92 45 100 60 Q102 38 112 52 Q122 62 130 100 Z')} 75%{d:path('M70 100 Q76 58 86 48 Q96 38 100 52 Q106 44 116 46 Q126 56 130 100 Z')} }
-      @keyframes flame2 { 0%,100%{opacity:0.8;transform:scaleY(1)} 50%{opacity:0.6;transform:scaleY(0.9)} }
-      @keyframes flame3 { 0%,100%{opacity:0.6;transform:scaleY(0.9)} 50%{opacity:0.9;transform:scaleY(1.1)} }
-      @keyframes glow { 0%,100%{opacity:0.15} 50%{opacity:0.25} }
-      @keyframes spark { 0%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-30px)} }
-      @keyframes ember { 0%,100%{opacity:0.8} 50%{opacity:0.4} }
+      @keyframes flame2 { 0%,100%{opacity:0.9;transform:scaleY(1)} 50%{opacity:0.7;transform:scaleY(0.92)} }
+      @keyframes flame3 { 0%,100%{opacity:0.7;transform:scaleY(0.9)} 50%{opacity:1;transform:scaleY(1.08)} }
+      @keyframes glow { 0%,100%{opacity:0.1} 50%{opacity:0.2} }
+      @keyframes spark { 0%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-25px)} }
+      @keyframes ember { 0%,100%{opacity:0.8} 50%{opacity:0.35} }
     </style>
   </defs>
 
   <!-- Ambient glow -->
-  <ellipse cx="100" cy="80" rx="90" ry="60" fill="#FF4500" opacity="0.08" style="animation:glow 2s infinite"/>
+  <ellipse cx="100" cy="70" rx="90" ry="55" fill="#FF6600" opacity="0.05" style="animation:glow 2s infinite"/>
 
-  <!-- Fireplace brick structure -->
-  <rect x="40" y="35" width="120" height="75" fill="#8B4513" rx="3"/>
-  <rect x="35" y="30" width="130" height="10" fill="#6B3410" rx="2"/>
-  <rect x="35" y="108" width="130" height="10" fill="#6B3410" rx="2"/>
+  <!-- Fireplace structure -->
+  <rect x="40" y="30" width="120" height="75" fill="#21262D" rx="3"/>
+  <rect x="35" y="25" width="130" height="10" fill="#161B22" rx="2"/>
+  <rect x="35" y="103" width="130" height="8" fill="#161B22" rx="2"/>
 
   <!-- Inner fireplace -->
-  <rect x="55" y="45" width="90" height="60" fill="#1a0a00" rx="2"/>
+  <rect x="55" y="40" width="90" height="60" fill="#0D1117" rx="2"/>
 
   <!-- Bricks -->
-  <rect x="40" y="38" width="25" height="12" fill="#9B5523" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="67" y="38" width="25" height="12" fill="#A0582A" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="94" y="38" width="25" height="12" fill="#9B5523" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="121" y="38" width="25" height="12" fill="#A0582A" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="40" y="93" width="30" height="12" fill="#A0582A" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="72" y="93" width="28" height="12" fill="#9B5523" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="102" y="93" width="28" height="12" fill="#A0582A" rx="1" stroke="#7B4513" stroke-width="0.5"/>
-  <rect x="132" y="93" width="28" height="12" fill="#9B5523" rx="1" stroke="#7B4513" stroke-width="0.5"/>
+  <rect x="40" y="33" width="25" height="10" fill="#2D333B" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="67" y="33" width="25" height="10" fill="#282E36" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="94" y="33" width="25" height="10" fill="#2D333B" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="121" y="33" width="25" height="10" fill="#282E36" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="40" y="90" width="30" height="10" fill="#282E36" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="72" y="90" width="28" height="10" fill="#2D333B" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="102" y="90" width="28" height="10" fill="#282E36" rx="1" stroke="#30363D" stroke-width="0.5"/>
+  <rect x="132" y="90" width="28" height="10" fill="#2D333B" rx="1" stroke="#30363D" stroke-width="0.5"/>
 
   <!-- Logs -->
-  <rect x="62" y="90" width="76" height="10" fill="#4A2E16" rx="4"/>
-  <rect x="68" y="82" width="64" height="10" fill="#3D2412" rx="4"/>
+  <rect x="62" y="86" width="76" height="10" fill="#3D2412" rx="4"/>
+  <rect x="68" y="78" width="64" height="10" fill="#2E1A0E" rx="4"/>
 
-  <!-- Fire - base orange -->
-  <ellipse cx="100" cy="90" rx="30" ry="10" fill="#FF4500" opacity="0.8" style="animation:ember 1s infinite"/>
+  <!-- Embers at base -->
+  <ellipse cx="100" cy="88" rx="28" ry="8" fill="#FF4500" opacity="0.6" style="animation:ember 1s infinite"/>
 
-  <!-- Fire - main flame (animated) -->
-  <path d="M70 100 Q75 60 85 50 Q95 40 100 55 Q105 40 115 50 Q125 60 130 100 Z" fill="#FF6600" opacity="0.9" style="animation:flame2 0.8s infinite">
-    <animate attributeName="d" values="M70 100 Q75 60 85 50 Q95 40 100 55 Q105 40 115 50 Q125 60 130 100 Z;M70 100 Q78 55 88 45 Q95 35 100 50 Q108 42 118 48 Q128 58 130 100 Z;M70 100 Q72 65 82 55 Q92 45 100 60 Q102 38 112 52 Q122 62 130 100 Z;M70 100 Q75 60 85 50 Q95 40 100 55 Q105 40 115 50 Q125 60 130 100 Z" dur="1.5s" repeatCount="indefinite"/>
+  <!-- Main flame -->
+  <path d="M70 95 Q75 58 85 48 Q95 38 100 52 Q105 38 115 48 Q125 58 130 95 Z" fill="#E06C10" opacity="0.85" style="animation:flame2 0.8s infinite">
+    <animate attributeName="d" values="M70 95 Q75 58 85 48 Q95 38 100 52 Q105 38 115 48 Q125 58 130 95 Z;M70 95 Q78 52 88 42 Q95 32 100 48 Q108 40 118 45 Q128 55 130 95 Z;M70 95 Q72 62 82 52 Q92 42 100 58 Q102 35 112 50 Q122 60 130 95 Z;M70 95 Q75 58 85 48 Q95 38 100 52 Q105 38 115 48 Q125 58 130 95 Z" dur="1.5s" repeatCount="indefinite"/>
   </path>
 
   <!-- Inner flame -->
-  <path d="M80 100 Q85 70 95 62 Q100 55 105 62 Q115 70 120 100 Z" fill="#FFAA00" opacity="0.8" style="animation:flame3 0.6s infinite">
-    <animate attributeName="d" values="M80 100 Q85 70 95 62 Q100 55 105 62 Q115 70 120 100 Z;M80 100 Q88 65 96 58 Q100 50 106 60 Q112 68 120 100 Z;M80 100 Q82 75 92 66 Q100 58 108 64 Q118 72 120 100 Z;M80 100 Q85 70 95 62 Q100 55 105 62 Q115 70 120 100 Z" dur="1s" repeatCount="indefinite"/>
+  <path d="M80 95 Q85 68 95 60 Q100 52 105 60 Q115 68 120 95 Z" fill="#FF8C00" opacity="0.8" style="animation:flame3 0.6s infinite">
+    <animate attributeName="d" values="M80 95 Q85 68 95 60 Q100 52 105 60 Q115 68 120 95 Z;M80 95 Q88 62 96 55 Q100 48 106 58 Q112 65 120 95 Z;M80 95 Q82 72 92 63 Q100 56 108 62 Q118 70 120 95 Z;M80 95 Q85 68 95 60 Q100 52 105 60 Q115 68 120 95 Z" dur="1s" repeatCount="indefinite"/>
   </path>
 
   <!-- Core flame -->
-  <path d="M90 100 Q93 80 100 72 Q107 80 110 100 Z" fill="#FFD700" opacity="0.9">
-    <animate attributeName="d" values="M90 100 Q93 80 100 72 Q107 80 110 100 Z;M90 100 Q95 78 100 68 Q105 78 110 100 Z;M90 100 Q92 82 100 75 Q108 82 110 100 Z;M90 100 Q93 80 100 72 Q107 80 110 100 Z" dur="0.7s" repeatCount="indefinite"/>
+  <path d="M90 95 Q93 78 100 70 Q107 78 110 95 Z" fill="#FFC107" opacity="0.9">
+    <animate attributeName="d" values="M90 95 Q93 78 100 70 Q107 78 110 95 Z;M90 95 Q95 75 100 65 Q105 75 110 95 Z;M90 95 Q92 80 100 73 Q108 80 110 95 Z;M90 95 Q93 78 100 70 Q107 78 110 95 Z" dur="0.7s" repeatCount="indefinite"/>
   </path>
 
   <!-- Sparks -->
-  <circle cx="90" cy="60" r="1.5" fill="#FFD700" style="animation:spark 2s 0s infinite"/>
-  <circle cx="105" cy="55" r="1" fill="#FFA500" style="animation:spark 1.5s 0.5s infinite"/>
-  <circle cx="110" cy="58" r="1.5" fill="#FFD700" style="animation:spark 2.5s 1s infinite"/>
-  <circle cx="95" cy="52" r="1" fill="#FFA500" style="animation:spark 1.8s 0.3s infinite"/>
+  <circle cx="90" cy="55" r="1.5" fill="#FFC107" style="animation:spark 2s 0s infinite"/>
+  <circle cx="105" cy="50" r="1" fill="#FF8C00" style="animation:spark 1.5s 0.5s infinite"/>
+  <circle cx="110" cy="53" r="1.5" fill="#FFC107" style="animation:spark 2.5s 1s infinite"/>
+  <circle cx="95" cy="48" r="1" fill="#FF8C00" style="animation:spark 1.8s 0.3s infinite"/>
 
-  <!-- Embers at base -->
-  <circle cx="80" cy="95" r="2" fill="#FF4500" style="animation:ember 1.5s infinite"/>
-  <circle cx="100" cy="98" r="2" fill="#FF6600" style="animation:ember 1s 0.5s infinite"/>
-  <circle cx="120" cy="95" r="2" fill="#FF4500" style="animation:ember 1.2s 0.3s infinite"/>
-
-  <!-- Text label -->
-  <text x="100" y="132" text-anchor="middle" fill="#FF6B9D" font-family="'Courier New',monospace" font-size="11" font-weight="bold">stay cozy</text>
+  <!-- Label -->
+  <text x="100" y="122" text-anchor="middle" fill="#484F58" font-family="'Courier New',monospace" font-size="10">keep shipping</text>
 </svg>

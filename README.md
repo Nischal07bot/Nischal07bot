@@ -1,60 +1,68 @@
 <div align="center">
 
-<!-- Cozy Pixel Room Banner -->
-<img src="./assets/cozy-room.svg" width="100%" alt="cozy pixel room"/>
+<!-- Dev Room Banner -->
+<img src="./assets/cozy-room.svg" width="100%" alt="dev workspace"/>
 
 <br/>
 
-<h1>🌸 Welcome to my cozy pixel corner</h1>
+## ⚡ Hey, I'm Nischal
+
 <p>
-  I'm <b>Nischal</b> — I love building tiny systems, solving problems,  
-  and making things feel simple & beautiful.
+  I build things, break things, and ship code that works.  
+  Competitive programmer · Systems thinker · Problem solver.
 </p>
 
-<!-- Animated Pixel Character -->
-<img src="./assets/character.svg" width="100" alt="pixel character"/>
+<!-- Pixel Character -->
+<img src="./assets/character.svg" width="80" alt="pixel dev"/>
 
 </div>
 
 ---
 
 <div align="center">
-  <b>📊 Player Stats</b>
+  <b>🎮 Stats</b>
 </div>
 
 ```diff
-+ 🎮 Role: Student / Developer / Builder of Tiny Worlds  
-+ 🧠 Skills: C++ | DSA | Systems | Game-like Interfaces  
-+ 🌱 Currently Learning: Low-level systems + design thinking  
-+ ✨ Loves: Cozy UIs, pixel aesthetics, clever algorithms
++ Role      → Student / Developer / Builder  
++ Skills    → C++ | DSA | Systems | Clean Interfaces  
++ Learning  → Low-level systems + design thinking  
++ Interests → Clean code, pixel aesthetics, algorithms
 ```
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Nischal07bot&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=FF6B9D&icon_color=FFC107)
+<a href="https://github.com/Nischal07bot">
+  <img src="https://github-readme-stats.vercel.app/api?username=Nischal07bot&show_icons=true&theme=github_dark&hide_border=true&count_private=true" width="48%" alt="GitHub Stats"/>
+</a>
+<a href="https://github.com/Nischal07bot">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nischal07bot&layout=compact&theme=github_dark&hide_border=true&count_private=true" width="40%" alt="Top Languages"/>
+</a>
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Nischal07bot&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=FF6B9D)
+<br/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com?user=Nischal07bot&theme=github-dark-blue&hide_border=true" width="48%" alt="GitHub Streak"/>
 
 </div>
 
 ---
 
 <div align="center">
-  <b>🚪 Portals</b>
+  <b>🔗 Portals</b>
 </div>
 
 <p align="center">
 
 <a href="https://leetcode.com/u/Nischal0703">
-  <img src="https://img.shields.io/badge/LeetCode-Training%20Ground-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
+  <img src="https://img.shields.io/badge/LeetCode-Arena-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
 </a>
 &nbsp;
 <a href="https://codeforces.com/profile/agentrico09_09">
-  <img src="https://img.shields.io/badge/Codeforces-Battle%20Arena-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces"/>
+  <img src="https://img.shields.io/badge/Codeforces-Compete-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces"/>
 </a>
 &nbsp;
 <a href="https://github.com/Nischal07bot">
-  <img src="https://img.shields.io/badge/GitHub-My%20World-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/GitHub-Projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
 
 </p>
@@ -62,39 +70,39 @@
 ---
 
 <div align="center">
-  <b>🗺️ Mini Map</b>
+  <b>🗺️ Navigation</b>
 </div>
 
 ```
     [ 🏠 Projects ] ---- [ 🧠 DSA ] ---- [ ⚔️ CP Arena ]
            |                  |                 |
-        small games       problem solving    codeforces
+       experiments       problem solving     competitive
 ```
 
 ---
 
 <div align="center">
 
-<!-- Animated Fireplace -->
-<img src="./assets/fireplace.svg" width="250" alt="cozy fireplace"/>
+<!-- Fireplace -->
+<img src="./assets/fireplace.svg" width="220" alt="fireplace"/>
 
 </div>
 
 <p align="center">
-  <i>Little steps every day, cozy progress always.</i>
+  <code>consistency > motivation</code>
 </p>
 
 ---
 
 <div align="center">
 
-<!-- Moon & Stars Footer -->
-<img src="./assets/moon.svg" width="300" alt="moon and stars"/>
+<!-- Footer -->
+<img src="./assets/moon.svg" width="280" alt="night sky"/>
 
 </div>
 
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Nischal07bot&color=FF6B9D&style=flat-square" alt="Profile views"/>
+  <img src="https://komarev.com/ghpvc/?username=Nischal07bot&color=58A6FF&style=flat-square&label=visitors" alt="visitors"/>
 </p>

@@ -3,66 +3,60 @@
     <style>
       @keyframes blink { 0%,42%,46%,100%{height:6px;y:22} 44%{height:1px;y:25} }
       @keyframes breathe { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-1px)} }
-      @keyframes wave { 0%,30%,100%{transform:rotate(0deg)} 10%{transform:rotate(-15deg)} 20%{transform:rotate(10deg)} }
-      @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)} }
-      .body { animation: breathe 3s ease-in-out infinite; }
-      .hand { animation: wave 4s ease-in-out infinite; transform-origin: 48px 38px; }
+      @keyframes wave { 0%,30%,100%{transform:rotate(0deg)} 10%{transform:rotate(-12deg)} 20%{transform:rotate(8deg)} }
+      .hand { animation: wave 5s ease-in-out infinite; transform-origin: 48px 38px; }
     </style>
   </defs>
 
-  <g class="body" style="animation:bounce 2s ease-in-out infinite">
+  <g style="animation:breathe 3s ease-in-out infinite">
     <!-- Shadow -->
-    <ellipse cx="32" cy="76" rx="16" ry="4" fill="#000" opacity="0.2"/>
+    <ellipse cx="32" cy="76" rx="16" ry="4" fill="#000" opacity="0.3"/>
 
     <!-- Feet -->
-    <rect x="18" y="64" width="10" height="8" fill="#333" rx="2"/>
-    <rect x="36" y="64" width="10" height="8" fill="#333" rx="2"/>
+    <rect x="18" y="64" width="10" height="8" fill="#1C1C1C" rx="2"/>
+    <rect x="36" y="64" width="10" height="8" fill="#1C1C1C" rx="2"/>
 
     <!-- Legs -->
-    <rect x="20" y="56" width="8" height="10" fill="#2c3e50"/>
-    <rect x="36" y="56" width="8" height="10" fill="#2c3e50"/>
+    <rect x="20" y="56" width="8" height="10" fill="#21262D"/>
+    <rect x="36" y="56" width="8" height="10" fill="#21262D"/>
 
-    <!-- Body (hoodie) -->
-    <rect x="16" y="34" width="32" height="24" fill="#4A90E2" rx="3"/>
+    <!-- Body (dark hoodie) -->
+    <rect x="16" y="34" width="32" height="24" fill="#2D333B" rx="3"/>
 
     <!-- Hoodie pocket -->
-    <rect x="22" y="46" width="20" height="8" fill="#3A7BC8" rx="2"/>
+    <rect x="22" y="46" width="20" height="8" fill="#22272E" rx="2"/>
 
-    <!-- Hoodie string -->
-    <line x1="28" y1="36" x2="28" y2="42" stroke="#fff" stroke-width="1" opacity="0.5"/>
-    <line x1="36" y1="36" x2="36" y2="42" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    <!-- Hoodie strings -->
+    <line x1="28" y1="36" x2="28" y2="42" stroke="#484F58" stroke-width="1"/>
+    <line x1="36" y1="36" x2="36" y2="42" stroke="#484F58" stroke-width="1"/>
 
     <!-- Left arm -->
-    <rect x="8" y="36" width="10" height="18" fill="#4A90E2" rx="3"/>
-    <rect x="8" y="50" width="8" height="6" fill="#FFD1A4" rx="2"/>
+    <rect x="8" y="36" width="10" height="18" fill="#2D333B" rx="3"/>
+    <rect x="8" y="50" width="8" height="6" fill="#D4A574" rx="2"/>
 
     <!-- Right arm (waving) -->
     <g class="hand">
-      <rect x="46" y="36" width="10" height="18" fill="#4A90E2" rx="3"/>
-      <rect x="48" y="50" width="8" height="6" fill="#FFD1A4" rx="2"/>
+      <rect x="46" y="36" width="10" height="18" fill="#2D333B" rx="3"/>
+      <rect x="48" y="50" width="8" height="6" fill="#D4A574" rx="2"/>
     </g>
 
     <!-- Head -->
-    <rect x="20" y="8" width="24" height="26" fill="#FFD1A4" rx="4"/>
+    <rect x="20" y="8" width="24" height="26" fill="#D4A574" rx="3"/>
 
     <!-- Hair -->
-    <rect x="18" y="4" width="28" height="14" fill="#2c1810" rx="4"/>
-    <rect x="18" y="10" width="6" height="10" fill="#2c1810" rx="1"/>
-    <rect x="42" y="10" width="4" height="8" fill="#2c1810" rx="1"/>
+    <rect x="18" y="4" width="28" height="14" fill="#1C1C1C" rx="3"/>
+    <rect x="18" y="10" width="6" height="10" fill="#1C1C1C" rx="1"/>
+    <rect x="42" y="10" width="4" height="8" fill="#1C1C1C" rx="1"/>
 
     <!-- Eyes -->
-    <rect x="26" y="22" width="5" height="6" fill="#1a1a2e" rx="1" style="animation:blink 4s infinite"/>
-    <rect x="35" y="22" width="5" height="6" fill="#1a1a2e" rx="1" style="animation:blink 4s 0.1s infinite"/>
+    <rect x="26" y="22" width="5" height="6" fill="#0D1117" rx="1" style="animation:blink 5s infinite"/>
+    <rect x="35" y="22" width="5" height="6" fill="#0D1117" rx="1" style="animation:blink 5s 0.1s infinite"/>
 
     <!-- Eye shine -->
-    <rect x="27" y="23" width="2" height="2" fill="#fff" opacity="0.7" rx="1"/>
-    <rect x="36" y="23" width="2" height="2" fill="#fff" opacity="0.7" rx="1"/>
+    <rect x="27" y="23" width="2" height="2" fill="#fff" opacity="0.6" rx="1"/>
+    <rect x="36" y="23" width="2" height="2" fill="#fff" opacity="0.6" rx="1"/>
 
-    <!-- Blush -->
-    <ellipse cx="24" cy="28" rx="3" ry="2" fill="#FF6B9D" opacity="0.4"/>
-    <ellipse cx="42" cy="28" rx="3" ry="2" fill="#FF6B9D" opacity="0.4"/>
-
-    <!-- Smile -->
-    <path d="M29 30 Q33 34 37 30" stroke="#e08b6a" stroke-width="1.5" fill="none"/>
+    <!-- Mouth -->
+    <rect x="30" y="30" width="6" height="2" fill="#B8896A" rx="1"/>
   </g>
 </svg>
